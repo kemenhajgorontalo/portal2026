@@ -62,10 +62,10 @@ body::before {
 .hero-image {
   display: block;
   width: 100%;
-  min-height: 420px;
-  max-height: 76vh;
-  object-fit: cover;
-  object-position: 54% center;
+  aspect-ratio: 1672 / 941;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
 }
 
 .shortcut-section {
@@ -218,7 +218,6 @@ body::before {
   }
 
   .hero-image {
-    min-height: 360px;
     object-position: center;
   }
 
@@ -237,7 +236,6 @@ body::before {
   }
 
   .hero-image {
-    min-height: 500px;
     max-height: 680px;
   }
 
