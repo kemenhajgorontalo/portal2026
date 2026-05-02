@@ -1,5 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   const iconFallbacks = {
+    "users-round": "users",
+    "clipboard-check": "clipboard-list",
+    "map-pin-check": "map-pin",
+    "chart-no-axes-combined": "bar-chart-3",
     facebook: "messages-square",
     youtube: "play-square",
     instagram: "camera"
@@ -7,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll("[data-lucide]").forEach((icon) => {
     const name = icon.getAttribute("data-lucide");
-    if (window.lucide?.icons?.[name]) return;
+    if (!window.lucide?.icons || window.lucide.icons[name]) return;
     icon.setAttribute("data-lucide", iconFallbacks[name] || "circle");
   });
 
