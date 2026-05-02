@@ -1,4 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const iconFallbacks = {
+    facebook: "messages-square",
+    youtube: "play-square",
+    instagram: "camera"
+  };
+
+  document.querySelectorAll("[data-lucide]").forEach((icon) => {
+    const name = icon.getAttribute("data-lucide");
+    if (window.lucide?.icons?.[name]) return;
+    icon.setAttribute("data-lucide", iconFallbacks[name] || "circle");
+  });
+
   if (window.lucide) {
     window.lucide.createIcons();
   }
