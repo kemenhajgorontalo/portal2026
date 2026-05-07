@@ -51,6 +51,55 @@ body::before {
   padding: 12px 12px 0;
 }
 
+.brand-strip {
+  display: grid;
+  grid-template-columns: minmax(62px, 96px) minmax(0, 1fr) minmax(62px, 96px);
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 12px;
+  border: 1px solid rgba(199, 150, 51, 0.22);
+  border-radius: 22px;
+  background: rgba(255, 250, 242, 0.9);
+  box-shadow: 0 12px 30px rgba(74, 42, 19, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.brand-logo {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.brand-center {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  text-align: center;
+}
+
+.brand-logo-center {
+  width: min(84px, 100%);
+  max-width: 84px;
+}
+
+.brand-center p {
+  margin: 0;
+  color: var(--gold);
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.brand-center h1 {
+  margin: 0;
+  color: var(--brown);
+  font-size: 0.98rem;
+  line-height: 1.18;
+}
+
 .hero {
   overflow: hidden;
   border: 1px solid rgba(199, 150, 51, 0.42);
@@ -274,6 +323,11 @@ body::before {
     padding: 18px;
   }
 
+  .brand-strip {
+    grid-template-columns: 108px minmax(0, 1fr) 108px;
+    padding: 14px 16px;
+  }
+
   .hero {
     border-radius: 22px;
   }
@@ -284,6 +338,19 @@ body::before {
 
   .section-head h1 {
     font-size: 1.7rem;
+  }
+
+  .brand-center p {
+    font-size: 0.74rem;
+  }
+
+  .brand-center h1 {
+    font-size: 1.22rem;
+  }
+
+  .brand-logo-center {
+    width: min(92px, 100%);
+    max-width: 92px;
   }
 
   .shortcut-card {
@@ -300,9 +367,35 @@ body::before {
   }
 }
 
+@media (max-width: 559px) {
+  .brand-strip {
+    grid-template-columns: minmax(42px, 60px) minmax(0, 1fr) minmax(42px, 60px);
+    gap: 6px;
+    padding: 10px 8px;
+  }
+
+  .brand-logo-center {
+    width: min(66px, 100%);
+    max-width: 66px;
+  }
+
+  .brand-center p {
+    font-size: 0.56rem;
+  }
+
+  .brand-center h1 {
+    font-size: 0.72rem;
+    line-height: 1.12;
+  }
+}
+
 @media (min-width: 920px) {
   .site-shell {
     padding: 24px 24px 10px;
+  }
+
+  .brand-strip {
+    grid-template-columns: 128px minmax(0, 1fr) 128px;
   }
 
   .hero-image {
